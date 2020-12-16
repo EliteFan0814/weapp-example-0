@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="tabs">
+		<view class="money">
+			<view class="money_content">
+				<view class="money_content_title">可提现余额：{{amount}}</view>
+				<view class="money_content_title" bindtap="open">提现记录</view>
+			</view>
+			<view class="money_value">
+				<view class="money_value_number">
+					<input type="digit" value="{{apply_amount}}" data-name="apply_amount" bind:input="setInputVal" placeholder="最低提现{{minCash}}元" />
+					<view class="shouxu" wx:if="{{apply_amount}}"><text class="text">手续费：</text>{{shouxu}} 元</view>
+				</view>
+			</view>
+		</view>
+		<view class="table">
+			<view class="tab">
+				<view>提现方式</view> 
+				<van-dropdown-menu>
+					<van-dropdown-item value="{{ type }}" options="{{ option }}" bind:change="onChange" />
+				</van-dropdown-menu>
+			</view>
+			<view>
+				<view class="tab">
+					<view>收款人姓名</view>
+					<input value="{{realname}}" placeholder="输入真实姓名" bind:input="setInputVal" data-name="realname" />
+				</view>
+				<view class="tab" >
+					<view>{{type == 'AMT' ? '银行卡号' : '提现账户'}}</view>
+					<input value="{{account}}" placeholder="{{type == 'AMT' ? '银行卡号' : '提现账户'}}" bind:input="setInputVal" data-name="account" />
+				</view>
+				<view class="tab" wx:if="{{type == 'AMT'}}">
+					<view>开户行</view>
+					<input value="{{bank}}" placeholder="请输入开户行" bind:input="setInputVal" data-name="bank" />
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="submit">
+		<base-btn btnName="立即提现" bindtap="submit" />
+	</view>
+</view>

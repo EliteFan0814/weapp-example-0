@@ -1,0 +1,35 @@
+/* pages/oldphone/oldphone.wxss *//* pages/detailapply/detailapply.wxss */
+.location .van-cell {
+  /* width: 90%; */
+  margin: 0 auto;
+  font-size: 30rpx;
+  /* padding: var(--cell-vertical-padding,0rpx) var(--cell-horizontal-padding,0rpx); */
+  padding: var(--cell-vertical-padding,10px) var(--cell-horizontal-padding,16px);
+
+}
+.location .van-field__input{
+  color: #333333;
+}
+.box .van-cell{
+  margin: 0 auto;
+  font-size: 30rpx;
+  padding: var(--cell-vertical-padding,20rpx) var(--cell-horizontal-padding,20rpx);
+}
+.box .van-hairline--top-bottom{
+  position: static;
+}
+.box .van-field__input{
+  color: #333333;
+}
+
+.box   button:not([size='mini']) {
+  width: auto;
+  
+}
+.box .van-button{
+  border: solid 1rpx #71adff;
+  background: white;
+  color: #71adff;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+}

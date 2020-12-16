@@ -1,0 +1,17 @@
+<!--pages/notice/notice.wxml-->
+<view class="wrap">
+    <view class="list"  wx:if="{{list.length}}">
+      <view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="goDetail" data-id="{{item.id}}" data-title="{{item.title}}">
+        <image class="image"   src="{{item.picurl}}" />
+        <view class="text">
+          <view class="title">{{item.title}}</view>
+          <view class="desc single-omit">{{item.descript}}</view>
+          <view class="time">{{item.create_time}}</view>
+        </view>
+        <van-icon name="arrow" color="#ccc"  />
+      </view>
+    </view>
+
+  <base-no-list title="暂无公告" wx:else/>
+</view>
+ 

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "base-no-list": "../../baseComponents/base-no-list/base-no-list"
+  },
+  "navigationBarTitleText": "已提现"
+}

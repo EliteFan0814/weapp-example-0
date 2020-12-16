@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "base-no-list": "../../baseComponents/base-no-list/base-no-list",
+    "base-btn": "../../baseComponents/base-btn/base-btn"
+  },
+  "navigationBarTitleText": "订单",
+  "backgroundColor": "#f5f5f5",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

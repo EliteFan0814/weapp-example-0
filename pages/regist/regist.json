@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "base-btn": "../../baseComponents/base-btn/base-btn",
+    "base-pre-img": "../../baseComponents/base-pre-img/base-pre-img"
+  },
+  "navigationBarTitleText": "注册"
+}

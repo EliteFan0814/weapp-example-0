@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="login">
+    <image class="logo" mode="widthFix" src="/static/img/logo.png" />
+  </view>  
+  <view class="form">
+    <view class="account">
+      <image src="/static/img/regist/phone.png" mode="widthFix" />
+      <input bindinput="handleForm" data-type="account" value="{{account}}" class="account-item" placeholder="请输入账号" />
+    </view>
+    <view class="account">
+      <image src="/static/img/regist/psd.png" mode="widthFix" />
+      <input bindinput="handleForm" data-type="password" value="{{password}}" class="account-item" placeholder="请输入密码" password />
+    </view>
+  </view>
+  <view class="login-btn">
+    <base-btn btn-name="登录" is-pushing="{{isLoging}}" bind:handleTap="handleLogin"></base-btn>
+    <view class="second-operate">
+      <view class="regist" bind:tap="forgetPsd">忘记密码</view>
+      <view class="regist" bind:tap="handleRegist">没有账号？立即注册</view>
+    </view>
+  </view>
+</view>

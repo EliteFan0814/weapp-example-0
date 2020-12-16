@@ -1,0 +1,22 @@
+<!--pages/changePhone/changePhone.wxml-->
+<view class="wrap">
+  <view class="field">
+    <view class="text">原密码</view>
+    <input class="input" type="password" value="{{oldpassword}}" placeholder="请输入原密码"
+       auto-focus bindblur="inputChange" data-name="oldpassword" />
+  </view>
+  <view class="field">
+    <view class="text">新密码</view>
+    <input class="input" type="password" value="{{password}}"  placeholder="请输入新密码"
+      bindblur="inputChange" data-name="password"/>
+  </view>
+  <view class="field">
+    <view class="text">确认密码</view>
+    <input class="input" type="password" value="{{repassword}}" placeholder="请确认密码" 
+      bindblur="inputChange" data-name="repassword"/>
+  </view>
+
+  <view class="submit">
+    <base-btn btnName="立即修改" bindtap="submit" />
+  </view>
+</view>

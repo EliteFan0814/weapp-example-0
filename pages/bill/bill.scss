@@ -1,0 +1,35 @@
+.container .block {
+  font-size: 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx 25rpx;
+  &:nth-child(n+2){
+    border-top: 1rpx solid #f4f4f4;
+  }
+}
+
+.container .block .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container .block .flex .right {
+  text-align: right;
+  color: #999;
+}
+.container .block .flex .right .time {
+  font-size: 26rpx;
+  margin-top: 7rpx;
+}
+.container .block .flex .money {
+  color: #ff4b4b;
+  margin-top: 7rpx;
+  font-size: 34rpx;
+}
+
+
+.container .bank {
+  width: 100%;
+}

@@ -1,0 +1,8 @@
+/* pages/notice/noticeDetail.wxss */
+.container {
+  padding: 20rpx 20rpx 0;
+}
+.content{
+  font-size: 28rpx;
+  text-indent: 2em;
+}

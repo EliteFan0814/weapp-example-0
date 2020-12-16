@@ -1,0 +1,112 @@
+.container .top-wrap {
+  background-color: #5975f0;
+  border-radius: 0rpx 0rpx 30rpx 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.container .top-wrap .top-switch {
+  height: 32px;
+  padding-top: 0rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  line-height: 20rpx;
+  color: #fff;
+}
+
+.container .top-wrap .top-switch .switch-bar {
+  margin: 0 20rpx 0 30rpx;
+}
+
+.container .top-wrap .top-switch .van-switch .van-switch__node {
+  background-color: #fff;
+}
+
+.container .top-wrap .top-switch .switch-active .van-switch .van-switch__node {
+  background-color: #5975f0;
+}
+
+.container .top-wrap .new-order {
+  padding: 35rpx 0;
+  margin: 100rpx auto 90rpx;
+  width: 552rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.container .top-wrap .new-order .slogan {
+  padding-left: 10rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  letter-spacing: 1rpx;
+  color: #ffffff;
+  background-color: #5975f0;
+  width: 110rpx;
+  height: 40rpx;
+  display: flex;
+  position: relative;
+}
+
+.container .top-wrap .new-order .slogan::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -40rpx;
+  border: 40rpx solid;
+  border-color: #5975f0 transparent transparent;
+}
+
+.container .top-wrap .new-order .order-name {
+  margin: 43rpx 50rpx 0;
+}
+
+.container .top-wrap .new-order .order-name .name-top {
+  margin-bottom: 10rpx;
+}
+
+.container .top-wrap .new-order .order-name .name-top .title {
+  font-size: 40rpx;
+  line-height: 34rpx;
+  letter-spacing: 2rpx;
+  color: #5975f0;
+  padding-right: 10rpx;
+}
+
+.container .top-wrap .new-order .order-info {
+  margin: 43rpx 50rpx 0;
+}
+
+.container .top-wrap .new-order .order-info .info-list {
+  margin-bottom: 20rpx;
+}
+
+.container .top-wrap .new-order .order-info .info-list image {
+  margin-right: 12rpx;
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.container .top-wrap .new-order .order-img {
+  margin: 48rpx 50rpx 0;
+  border-radius: 30rpx;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.container .top-wrap .new-order .order-img image {
+  width: 120rpx;
+  padding: 10rpx;
+}
+
+.container .receive-order {
+  margin: 80rpx 124rpx 0;
+  padding-bottom: 80rpx;
+}
+
+.container .receive-order .refuse-bg {
+  margin-top: 20rpx;
+  background-color: #ff6666;
+}

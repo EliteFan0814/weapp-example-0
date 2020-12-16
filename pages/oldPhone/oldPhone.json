@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "原手机号验证",
+  "usingComponents": {
+    "base-btn": "../../baseComponents/base-btn/base-btn"
+  }
+}

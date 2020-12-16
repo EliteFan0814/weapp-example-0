@@ -1,0 +1,86 @@
+<view class="finance">
+	<!-- <view class="thumb-box">
+		<image class="thumb" src="{{info.picurl || '../../static/img/avint.png'}}" alt=""/>
+	</view> -->
+	<view class="head" > 
+		<view class="head-welcome">欢迎回来</view>
+		<view class="head-name">{{info.realname}}</view>
+	</view>
+	 
+	<view class="card">
+		<image class="bg" mode="aspectFill" src="../../static/img/finance/cw-bg.png" />
+		<view class="other-wigdget">
+			<view class="card-top" bindtap="goBill">
+				<view class="text" >总收益 
+					<image class="eye" src="../../static/img/finance/eye.png" />
+				</view>
+				<view class="price">{{info.shouyi}}</view>
+			</view>
+			<view class="card-bottom">
+				<view class="item" bindtap="goOrder">
+					<view class="text"  >总订单金额
+						<image class="sy" src="../../static/img/finance/sy.png" />
+					</view>
+					<view class="price">{{info.order_money}}</view>
+				</view>
+				<view class="item" bindtap="goOrder">
+					<view class="text">总接单量
+						<image class="sy" src="../../static/img/finance/sy.png" />
+					</view>
+					<view class="price">{{info.order_num}}</view>
+				</view>
+			</view>
+		</view>  
+	</view>
+
+	<view class="with-wrap">
+		<view class="with-wrap-item" bindtap="goBill">
+			<image class="bg" src="../../static/img/finance/ktx.png" />
+			<view class="other-wigdget">
+				<image class="icon-with" src="../../static/img/finance/with.png" />
+				<view class="text" >可提现金额</view>
+				<view class="price" >￥{{info.amount}}</view>
+			</view>
+		</view>
+		<view class="with-wrap-item" bindtap="goWithdrawRecord">
+			<image class="bg" src="../../static/img/finance/ytx.png" />
+			<view class="other-wigdget">
+				<image class="icon-money" src="../../static/img/finance/money.png" />
+				<view class="text" >已提现金额</view>
+				<view class="price">￥{{info.cash_finish}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="bottom-wrap">
+		<view class="bottom-wrap-item">
+			<view class="icon-box one">
+				<image class="icon" class="icon" src="../../static/img/finance/count.png" />
+			</view>
+			<view class="right"  bindtap="goBill"> 
+				<view class="text">今日总收益</view>
+				<view class="number price">{{info.today_shouyi}}</view>
+			</view>
+		</view>
+
+		<view class="bottom-wrap-item">
+			<view class="icon-box two">
+				<image class="icon" src="../../static/img/finance/num.png" />
+			</view>
+			<view class="right" bindtap="goOrder">
+				<view class="text" >今日接单量</view>
+				<view class="number num">{{info.today_order_num}}</view>
+			</view>
+		</view>
+
+		<view class="bottom-wrap-item">
+			<view class="icon-box three">
+				<image class="icon"  src="../../static/img/finance/amount.png" />
+			</view>
+			<view class="right" bindtap="goOrder">
+				<view class="text" >今日订单金额</view>
+				<view class="number amount">{{info.today_order_money}}</view>
+			</view>
+		</view>
+	</view>
+</view>

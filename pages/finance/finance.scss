@@ -1,0 +1,207 @@
+/* pages/finance/finance.wxss */
+.finance{
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  .thumb {
+    margin-top:  30rpx;
+    width: 126rpx;
+    height: 123rpx;
+    border-radius: 50%;
+  }
+ 
+  .head{
+    margin-top: 20rpx;
+    margin-left: 15rpx;
+    &-welcome{
+      font-size: 28rpx;
+      letter-spacing: 3rpx;
+      color: #999999;
+    }
+    &-name{
+      margin: 20rpx 0;
+      font-size: 40rpx;
+      letter-spacing: 4rpx;
+      color: #333333;
+    }
+  }
+
+  .card{
+    height: 300rpx;
+    color: #ffffff;
+    position: relative;
+    .bg{
+      position: absolute;
+      width: 100%;
+      height: 300rpx;
+      // box-shadow: 0rpx 4rpx 10rpx 0rpx 
+      // rgba(89, 117, 240, 0.6);
+    }
+    .other-wigdget{
+      padding: 50rpx 0 40rpx 55rpx;
+      // width: 100%;
+      position: absolute;
+      z-index: 9;
+    }
+    &-top{
+      // width: 100%;
+      .text{
+        font-size: 24rpx;
+        .eye{
+          width: 25rpx;
+          height: 20rpx;;
+        }
+      }
+      .price{
+        font-size: 50rpx;
+        margin: 20rpx 0 25rpx;
+      }
+    }
+    &-bottom{
+      display: flex;
+      justify-content: space-between;
+      .item{
+        &:last-child{
+          margin-left: 270rpx;
+        }
+        .text{
+          font-size: 24rpx;
+          .sy{
+            width: 22rpx;
+            height: 22rpx;
+          }
+        }
+        .price{
+          margin-top: 5rpx;
+          font-size: 30rpx;
+        }
+      }
+    }
+  }
+
+  .with-wrap{
+    margin-top: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    &-item:first-child{
+      // box-shadow: 0rpx 4rpx 10rpx 0rpx 
+      //   rgba(255, 105, 81, 0.6);
+      border-radius: 20rpx;
+    }
+    &-item:last-child{
+      margin-left: 35rpx;
+      // box-shadow: 0rpx 4rpx 10rpx 0rpx 
+      //   rgba(69, 110, 254, 0.6);
+      border-radius: 20rpx;
+      .text{
+        margin: 25rpx 0 25rpx;
+      }
+    }
+    &-item{
+      flex: 1;
+      position: relative;
+      height: 240rpx;
+      padding: 10rpx 0;
+      .bg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .other-wigdget{
+        padding: 30rpx;
+        position: absolute;
+        z-index: 9;
+      }
+      .icon-with{
+        width: 60rpx;
+        height: 46rpx;
+      }
+      .icon-money{
+        width: 60rpx;
+        height: 60rpx;
+      }
+      .text{
+        font-size: 24rpx;
+        letter-spacing: 2rpx;
+        margin: 35rpx 0 30rpx;
+      }
+      .price{
+        font-size: 30rpx;
+        letter-spacing: 3rpx;
+      }
+    }
+  }
+
+  .bottom-wrap{
+    margin: 25rpx 0 0;
+    padding-bottom: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    &-item:nth-child(n+3){
+      margin-top: 25rpx;
+    }
+    &-item:nth-child(Odd){
+      margin-right: 50rpx;
+    }
+    &-item:nth-child(3){
+    }
+    &-item{
+      display: flex;
+      align-items: center;
+      padding: 15rpx 0;
+      background-color: #f1f1f1;
+      border-radius: 12rpx;
+      width: 46%;
+      .icon-box{
+        margin: 20rpx;
+        padding: 20rpx;
+        border-radius: 12rpx;
+        display: flex;
+        align-items: center;
+      }
+      .one{
+        background: #1ccd9d;
+        .icon{
+          width: 40rpx;
+          height: 40rpx;
+        }
+      }
+      .two{
+        background: #fcaf2a;
+        .icon{
+          width: 37rpx;
+          height: 42rpx;
+        }
+      }
+      .three{
+        background: #ff695b;
+        .icon{
+          width: 35rpx;
+          height: 42rpx;
+        }
+      }
+      .right{
+        .text{
+          font-size: 24rpx;
+          letter-spacing: 1rpx;
+          color: #333333;
+        }
+        .number{
+          font-size: 30rpx;
+          letter-spacing: 1rpx;
+          margin-top: 20rpx;
+        }
+        .price{
+          color: #1ccd9d;
+        }
+        .num{
+          color: #fcaf2a;
+        }
+        .amount{
+          color: #ff6951;
+        }
+      }
+    }
+  }
+}

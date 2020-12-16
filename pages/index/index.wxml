@@ -1,0 +1,74 @@
+<!-- index.wxml -->
+<view class="container">
+		<view class="top-wrap" style="padding-top:{{capsuleToTop}}px;">
+				<view class="top-switch">
+						<view wx:if="{{isGetPositionAuth&&isLogin}}" class="switch-bar">
+								<van-switch checked="{{ isWorking }}" size="40rpx" active-color="#fff" inactive-color="#333333" active-value="{{false}}" inactive-value="{{true}}" class="{{isWorking?'switch-active':''}}" bind:tap="changeWorkStyle" />
+						</view>
+						<view wx:else bind:tap="showAuthPosition" class="switch-bar">
+								<van-switch checked="{{ isWorking }}" size="40rpx" active-color="#fff" inactive-color="#333333" active-value="{{false}}" inactive-value="{{true}}" class="{{isWorking?'switch-active':''}}" disabled />
+						</view>
+						<!-- <view class="switch-text">{{isWorking?'营业':'歇业'}}</view> -->
+						<view wx:if="{{isWorking}}" class="switch-text">营业</view>
+						<view wx:else class="switch-text">歇业</view>
+				</view>
+				<view wx:if="{{isGetLatestOrder}}" class="new-order">
+						<view class="slogan">新订单</view>
+						<view class="order-name">
+								<view class="name-top">
+										<text class="title">{{latestOrder.product_name || '暂无'}}</text>
+										<text>{{latestOrder.skill_name || '暂无'}}</text>
+								</view>
+								<!-- <view>
+										<text>{{latestOrderWrap.remark || '暂无备注'}}</text>
+								</view> -->
+						</view>
+						<view class="order-info">
+								<view class="info-list">
+										<image src="/static/img/index/budget.png" />
+										<text>{{latestOrderWrap.budget}}</text>
+								</view>
+								<view class="info-list">
+										<image src="/static/img/index/time.png" />
+										<text>{{latestOrderWrap.visiting_time}}</text>
+								</view>
+								<view class="info-list">
+										<image src="/static/img/index/linkman.png" />
+										<text>{{latestOrderWrap.linkman}}</text>
+								</view>
+								<!-- <view class="info-list">
+										<image src="/static/img/index/phone.png" />
+										<text>{{latestOrderWrap.contact}}</text>
+								</view> -->
+								<view class="info-list">
+										<image src="/static/img/index/address.png" />
+										<text>{{latestOrderWrap.address}}</text>
+								</view>
+								<view class="info-list">
+										<text>备注：</text>
+										<text>{{latestOrderWrap.remark || '暂无备注'}}</text>
+								</view>
+						</view>
+						<view class="order-img">
+								<!-- <image mode="widthFix" src="{{latestOrder.picurl}}" /> -->
+								<base-pre-img mode="widthFix" singleShow="{{false}}" imgList="{{latestOrderAlbum}}"></base-pre-img>
+						</view>
+				</view>
+		</view>
+		<!-- <base-no-list wx:if="{{!isGetLatestOrder}}" title="下拉获取最新订单~"></base-no-list> -->
+		<base-no-list wx:if="{{!isGetLatestOrder}}" title="新订单正在飞速赶来~"></base-no-list>
+		<view wx:if="{{isGetLatestOrder}}" class="receive-order">
+				<base-btn btn-name="立即接单" is-pushing="{{isReceiving}}" bind:handleTap="receiveOrder"></base-btn>
+				<base-btn btn-name="拒绝接单" is-pushing="{{isRefusing}}" base-btn-style="refuse-bg" bind:handleTap="refuseOrder"></base-btn>
+		</view>
+		<receive-dialog wx:if="{{showDialog}}" orderName="{{latestOrder.order_name}}" orderId="{{latestOrder.order_id}}" bind:closeDialog="closeDialog"></receive-dialog>
+		<!-- <view class="userinfo">
+				<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+						获取头像昵称
+				</button>
+				<block wx:else>
+						<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+						<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+				</block>
+		</view> -->
+</view>

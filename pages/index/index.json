@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "base-pre-img": "../../baseComponents/base-pre-img/base-pre-img",
+    "base-no-list": "../../baseComponents/base-no-list/base-no-list",
+    "base-btn": "../../baseComponents/base-btn/base-btn",
+    "receive-dialog": "./components/receive-dialog/receive-dialog"
+  },
+  "navigationBarTitleText": "订单",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "backgroundColor":"#5975f0"
+}

@@ -1,0 +1,35 @@
+<!--pages/changeInfo/changeInfo.wxml-->
+<view class="wrap">
+  <view class="field">
+    <view class="text">头像</view>
+    <image  src="{{thumb_str || '../../static/img/avint.png'}}" bindtap="upload" class="up-pic"/>
+  </view>
+
+  <view class="field" bindtap="changeName">
+    <view class="text">昵称</view>
+    <view class="right">
+      <view class="text">{{name}}</view>
+      <van-icon slot="right-icon" name="arrow" class="icon"  />
+    </view>
+  </view>
+  
+  <view class="field" bindtap="open" data-path="oldPhone">
+    <view class="text">手机号</view>
+    <view class="right">
+      <view class="text">{{phone}}</view>
+      <van-icon slot="right-icon" name="arrow" class="icon"  />
+    </view>
+  </view>
+
+  <view class="field" bindtap="open" data-path="changePwd">
+    <view class="text">密码</view>
+    <van-icon slot="right-icon" name="arrow" class="icon"  />
+  </view>
+  
+  <van-dialog use-slot title="修改昵称" show="{{ show }}" 
+    show-cancel-button bind:confirm="submit"
+    bind:close="onClose" 
+  >
+    <input class="input-name" type="text" placeholder="请输入昵称"  value="{{name}}" bindinput="inputChange" data-name="name" />
+  </van-dialog>
+</view>

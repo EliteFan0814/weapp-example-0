@@ -1,0 +1,199 @@
+.container {
+  background-color: #fff;
+  .order-list {
+    background-color: #fff;
+    padding: 30rpx 25rpx 90rpx;
+    margin-bottom: 20rpx;
+    .contact {
+      display: flex;
+      align-items: center;
+      margin-bottom: 50rpx;
+      padding: 20rpx 25rpx;
+      font-size: 28rpx;
+      color: #ffffff;
+      background-image: linear-gradient(0deg, #4e51de 0%, #7578e1 100%);
+      box-shadow: 0rpx 8rpx 10rpx 0rpx rgba(117, 120, 225, 0.3);
+      border-radius: 26rpx;
+      // > view {
+      //   display: flex;
+      //   align-items: center;
+      // }
+      .left-info {
+        image {
+          width: 90rpx;
+          height: 90rpx;
+          border-radius: 50%;
+          margin-right: 25rpx;
+          background-color: #fff;
+        }
+      }
+      .right-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        > text,
+        view {
+          padding: 5rpx 0;
+        }
+        .map-wrap {
+          display: flex;
+        }
+        .message {
+          margin-right: 80rpx;
+          width: 31rpx;
+          height: 29rpx;
+        }
+        .phone {
+          width: 26rpx;
+          height: 34rpx;
+        }
+      }
+    }
+    .order-item {
+      border: 1px solid #E0E0E0;
+      margin-bottom: 20rpx;
+      padding: 20rpx 25rpx;
+      border-radius: 26rpx;
+
+      .card-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20rpx;
+        color: #999999;
+      }
+
+      .detail-list {
+        .title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          line-height: 34rpx;
+          letter-spacing: 2rpx;
+          color: #333333;
+          margin: 15rpx 0;
+          image {
+            width: 40rpx;
+            height: 40rpx;
+          }
+          .total-price {
+            color: #fb1210;
+          }
+        }
+        .serve-item {
+          // border: 1px solid red;
+          border-bottom: 1rpx solid #E0E0E0;
+          .detail-item {
+            padding: 10rpx 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .input-wrap {
+              display: flex;
+              align-items: center;
+              .serve-list {
+                width: 400rpx;
+              }
+            }
+            .left-name {
+              font-size: 28rpx;
+              line-height: 34rpx;
+              letter-spacing: 1rpx;
+              color: #999999;
+              margin-right: 30rpx;
+            }
+            .right-value {
+              font-size: 24rpx;
+              line-height: 34rpx;
+              letter-spacing: 0rpx;
+              color: #333333;
+            }
+            .right-btn {
+              font-size: 30rpx;
+              letter-spacing: 2rpx;
+              color: #5975f0;
+              .confirm-style {
+                font-size: 25rpx;
+                padding: 10rpx 15rpx;
+              }
+            }
+          }
+        }
+      }
+      .log-item {
+        margin-bottom: 10rpx;
+        border-bottom: 1rpx solid #E0E0E0;
+        font-size: 26rpx;
+        &:last-child {
+          border: none;
+        }
+        > view {
+          padding: 5rpx 0;
+        }
+        .log-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #999;
+        }
+      }
+      .add-btn {
+        // border: 1px solid red;
+        padding-top: 20rpx;
+        margin: 0 150rpx;
+      }
+    }
+  }
+  .add-dialog {
+    van-action-sheet {
+      .add-content {
+        height: 80vh;
+        .top-bar {
+          padding: 20rpx;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .console {
+            color: #ff6666;
+          }
+          .confirm {
+            color: #3366cc;
+          }
+        }
+        .select-list {
+          .select-wrap {
+            height: 400rpx;
+            .select-item {
+              background-color: #fff;
+              color: #333;
+              display: inline-block;
+              border: 1rpx dashed #c5c5c5;
+              padding: 10rpx 15rpx;
+              margin: 0 10rpx 10rpx;
+              transition: all 0.3s;
+              border-radius: 50rpx;
+            }
+            .active-item {
+              background-color: #3366cc;
+              color: #fff;
+              border: 1rpx solid #3366cc;
+            }
+          }
+        }
+      }
+    }
+  }
+  .picker-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  .confirm-order {
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+    bottom: 30rpx;
+    padding: 0 150rpx;
+  }
+}

@@ -1,0 +1,204 @@
+.container {
+  background-color: #fff;
+  .logo-wrap {
+    text-align: center;
+    margin-bottom: 30rpx;
+    .logo {
+      width: 300rpx;
+    }
+  }
+  .first-form {
+    padding-top: 20rpx;
+    .regist {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .account {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        margin: 20rpx 0;
+        padding-bottom: 20rpx;
+        border-bottom: 1rpx solid #f5f5f5;
+        font-size: 28rpx;
+        width: 85%;
+        image {
+          width: 45rpx;
+          margin-right: 30rpx;
+        }
+        .verify-left {
+          display: flex;
+        }
+        .verify-left {
+          display: flex;
+          .verify-input {
+            width: 410rpx;
+          }
+        }
+        .verify-right {
+          .verify-btn {
+            padding: 10rpx 15rpx;
+            border-radius: 30rpx;
+            color: #f87574;
+            text-align: center;
+            width: 120rpx;
+            border: 1px solid #f87574;
+            font-size: 24rpx;
+          }
+        }
+        .verify-left {
+          display: flex;
+        }
+        .verify-right {
+          .verify-btn {
+            padding: 10rpx 15rpx;
+            border-radius: 30rpx;
+            color: #f87574;
+            text-align: center;
+            width: 120rpx;
+            border: 1px solid #f87574;
+            font-size: 24rpx;
+          }
+        }
+      }
+    }
+
+    .first-btn {
+      margin-top: 40rpx;
+      text-align: center;
+    }
+  }
+  // 技能选择
+  .second-form {
+    .skill-list {
+      // padding-bottom: 200rpx;
+      // border: 1px solid red;
+      .skill-item {
+        padding: 10rpx 15rpx;
+        color: #333;
+        margin-bottom: 20rpx;
+        border-bottom: 1rpx solid #f2f2f2;
+        &:last-child {
+          border-bottom: none;
+        }
+        .skill-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 15rpx;
+          margin-bottom: 15rpx;
+          font-size: 28rpx;
+          // border-bottom: 1rpx solid #f5f5f5;
+          .left-wrap,
+          .right-wrap {
+            display: flex;
+            align-items: center;
+            text {
+              padding-right: 10rpx;
+            }
+          }
+          .left-wrap {
+            image {
+              border: 1px solid red;
+              margin-right: 30rpx;
+              width: 40rpx;
+              height: 40rpx;
+            }
+          }
+          .right-wrap {
+            color: #5975f0;
+          }
+        }
+      }
+    }
+    .for-skill {
+      background-color: #fff;
+      bottom: 80rpx;
+      padding: 20rpx 150rpx 40rpx;
+    }
+    .skill-dialog {
+      van-action-sheet {
+        .skill-content {
+          position: relative;
+          height: 80vh;
+          .top-bar {
+            padding: 20rpx;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .console {
+              color: #ff6666;
+            }
+            .confirm {
+              color: #3366cc;
+            }
+          }
+          .skill-btm {
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            top: 85rpx;
+            bottom: 0;
+            overflow: hidden;
+            overflow-y: auto;
+            font-size: 28rpx;
+          }
+        }
+      }
+    }
+    .skill-btm {
+      font-size: 24rpx;
+      .skill {
+        font-size: 26rpx;
+        background-color: #fff;
+        color: #333;
+        display: inline-block;
+        border: 1rpx dashed #c5c5c5;
+        padding: 8rpx 25rpx;
+        margin: 0 10rpx 10rpx;
+        transition: all 0.3s;
+        border-radius: 50rpx;
+      }
+      .active-skill {
+        background-color: #3366cc;
+        color: #fff;
+        border: 1rpx solid #3366cc;
+      }
+    }
+  }
+  .third-form {
+    .card-wrap {
+      .card-item {
+        margin: 20rpx 0rpx;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 26rpx;
+        color: #bbb;
+        .card-img {
+          width: 500rpx;
+        }
+      }
+    }
+    .last {
+      margin: 15px 0 25px;
+    }
+  }
+  .regist-btn {
+    // position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    // bottom: 400rpx;
+    padding: 20rpx 150rpx;
+    .second-operate {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .login {
+      margin-top: 20rpx;
+      font-size: 24rpx;
+      color: #333;
+    }
+  }
+}

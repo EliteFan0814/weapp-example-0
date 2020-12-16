@@ -1,0 +1,12 @@
+.no-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info {
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  letter-spacing: 0rpx;
+  color: #999999;
+}

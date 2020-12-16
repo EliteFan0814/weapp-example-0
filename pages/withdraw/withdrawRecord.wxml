@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:if="{{list.length!=0}}">
+    <view class="block" wx:for="{{list}}" wx:key="*this">
+      <van-collapse value="{{ activeNames }}" bind:change="onChange" border="{{false}}">
+        <van-collapse-item name="{{index}}">
+          <view slot="title" class="flex">
+            <view class="left">
+              <view>{{item.type_str}}</view>
+              <view class="money">{{item.apply_amount}}</view>
+            </view>
+            <view class="right">
+              <view>{{item.status_str}}</view>
+              <view class="time">{{item.apply_time}}</view>
+            </view>
+          </view>
+          <view class="content">
+            <view>姓名：{{item.realname}}</view>
+            <view>账号：{{item.account}}</view>
+            <view wx:if="{{item.bank}}">开户行：{{item.bank}}</view>
+            <view wx:if="{{item.status==1}}">拒绝理由：{{item.reply}}</view>
+          </view>
+        </van-collapse-item>
+      </van-collapse>
+    </view>
+  </view>
+  <base-no-list wx:else title="暂无提现记录"/>
+</view>

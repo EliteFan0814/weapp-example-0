@@ -1,0 +1,194 @@
+/* pages/personal/personal.wxss */
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.wrapper .bg {
+  position: absolute;
+  width: 100%;
+  height: 640rpx;
+}
+
+.wrapper .content {
+  width: 100%;
+  margin-top: 150rpx;
+  padding-bottom: 20rpx;
+  position: absolute;
+}
+
+.wrapper .head {
+  z-index: 9;
+  padding: 0 60rpx;
+}
+
+.wrapper .head-top {
+  padding-top: 30rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 120rpx;
+}
+
+.wrapper .head-top .van-button {
+  padding: 30rpx 40rpx;
+  display: flex;
+  font-size: 26rpx;
+}
+
+.wrapper .head .thumb-box {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  padding: 5rpx;
+  box-sizing: border-box;
+  margin-right: 60rpx;
+}
+
+.wrapper .head .thumb-box .thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.wrapper .head-info .name {
+  font-size: 30rpx;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.wrapper .head-info .phone {
+  background-color: #AFB9E7;
+  padding: 10rpx 15rpx;
+  border-radius: 19rpx;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.wrapper .head-setup {
+  width: 42rpx;
+  height: 39rpx;
+  flex-direction: flex-end;
+  position: absolute;
+  right: 0;
+}
+
+.wrapper .head-card {
+  background-color: #5975f0;
+  box-shadow: 0rpx 1rpx 24rpx 5rpx rgba(12, 76, 167, 0.2);
+  border-radius: 17rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+
+.wrapper .head-card .title {
+  width: 100%;
+  font-size: 28rpx;
+  color: #fff;
+  margin-left: 30rpx;
+  line-height: 60rpx;
+}
+
+.wrapper .head-card .title::after {
+  display: block;
+  content: '';
+  height: 1rpx;
+  background: #e2f2ff;
+  margin-left: -30rpx;
+  opacity: .6;
+}
+
+.wrapper .head-card .item {
+  flex: .5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60rpx 0;
+  color: #fff;
+}
+
+.wrapper .head-card .item .price {
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+
+.wrapper .head-card .item .name {
+  font-size: 24rpx;
+}
+
+.wrapper .head-card .dir {
+  width: 1rpx;
+  background-image: linear-gradient(#647EF1, #fff, #647EF1);
+  margin: 35rpx 0 55rpx 0;
+}
+
+.wrapper .head-btn {
+  width: 245rpx;
+  background-color: #ffffff;
+  box-shadow: 0rpx 1rpx 9rpx 2rpx rgba(89, 117, 240, 0.3);
+  border-radius: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15rpx;
+  transform: translate(0%, -25rpx);
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.wrapper .head-btn .icon {
+  width: 36rpx;
+  height: 27rpx;
+  margin-right: 15rpx;
+}
+
+.wrapper .head-btn .text {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.wrapper .list {
+  margin: 35rpx 25rpx 0;
+  font-size: 28rpx;
+  box-shadow: 0rpx 4rpx 10rpx 0rpx rgba(221, 221, 221, 0.6);
+  border-radius: 20rpx;
+}
+
+.wrapper .list .list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx 0;
+  margin: 0 40rpx;
+}
+
+.wrapper .list .list-item:nth-child(n+2) {
+  border-top: 1px solid #f4f4f4;
+}
+
+.wrapper .list .list-item .item-left .icon {
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+
+.wrapper .list .list-item .item-left .text {
+  padding-left: 30rpx;
+  vertical-align: middle;
+  font-size: 28rpx;
+}
+
+.wrapper .van-icon {
+  color: #ccc;
+  font-size: 30rpx;
+}
+
+.wrapper .signOut {
+  margin: 120rpx 100rpx 0;
+  display: block;
+}

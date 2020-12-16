@@ -1,0 +1,4 @@
+<view class="no-list" style="padding-top:{{topDistance}}rpx;">
+  <image mode="widthFix"  style="width:{{widthSize}}rpx;height:{{heightSize}}rpx" src="/static/img/noList.png" />
+  <text class="info">{{title}}</text>
+</view>

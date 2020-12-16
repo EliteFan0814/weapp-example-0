@@ -1,0 +1,216 @@
+.container {
+  background-color: #fff;
+}
+
+.container .order-list {
+  background-color: #fff;
+  padding: 30rpx 25rpx 90rpx;
+  margin-bottom: 20rpx;
+}
+
+.container .order-list .contact {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50rpx;
+  padding: 20rpx 25rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  background-image: linear-gradient(0deg, #4e51de 0%, #7578e1 100%);
+  box-shadow: 0rpx 8rpx 10rpx 0rpx rgba(117, 120, 225, 0.3);
+  border-radius: 26rpx;
+}
+
+.container .order-list .contact .left-info image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-right: 25rpx;
+  background-color: #fff;
+}
+
+.container .order-list .contact .right-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container .order-list .contact .right-info > text,
+.container .order-list .contact .right-info view {
+  padding: 5rpx 0;
+}
+
+.container .order-list .contact .right-info .map-wrap {
+  display: flex;
+}
+
+.container .order-list .contact .right-info .message {
+  margin-right: 80rpx;
+  width: 31rpx;
+  height: 29rpx;
+}
+
+.container .order-list .contact .right-info .phone {
+  width: 26rpx;
+  height: 34rpx;
+}
+
+.container .order-list .order-item {
+  border: 1px solid #E0E0E0;
+  margin-bottom: 20rpx;
+  padding: 20rpx 25rpx;
+  border-radius: 26rpx;
+}
+
+.container .order-list .order-item .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  color: #999999;
+}
+
+.container .order-list .order-item .detail-list .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 34rpx;
+  letter-spacing: 2rpx;
+  color: #333333;
+  margin: 15rpx 0;
+}
+
+.container .order-list .order-item .detail-list .title image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container .order-list .order-item .detail-list .title .total-price {
+  color: #fb1210;
+}
+
+.container .order-list .order-item .detail-list .serve-item {
+  border-bottom: 1rpx solid #E0E0E0;
+}
+
+.container .order-list .order-item .detail-list .serve-item .detail-item {
+  padding: 10rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .order-list .order-item .detail-list .serve-item .detail-item .input-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.container .order-list .order-item .detail-list .serve-item .detail-item .input-wrap .serve-list {
+  width: 400rpx;
+}
+
+.container .order-list .order-item .detail-list .serve-item .detail-item .left-name {
+  font-size: 28rpx;
+  line-height: 34rpx;
+  letter-spacing: 1rpx;
+  color: #999999;
+  margin-right: 30rpx;
+}
+
+.container .order-list .order-item .detail-list .serve-item .detail-item .right-value {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  letter-spacing: 0rpx;
+  color: #333333;
+}
+
+.container .order-list .order-item .detail-list .serve-item .detail-item .right-btn {
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+  color: #5975f0;
+}
+
+.container .order-list .order-item .detail-list .serve-item .detail-item .right-btn .confirm-style {
+  font-size: 25rpx;
+  padding: 10rpx 15rpx;
+}
+
+.container .order-list .order-item .log-item {
+  margin-bottom: 10rpx;
+  border-bottom: 1rpx solid #E0E0E0;
+  font-size: 26rpx;
+}
+
+.container .order-list .order-item .log-item:last-child {
+  border: none;
+}
+
+.container .order-list .order-item .log-item > view {
+  padding: 5rpx 0;
+}
+
+.container .order-list .order-item .log-item .log-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+}
+
+.container .order-list .order-item .add-btn {
+  padding-top: 20rpx;
+  margin: 0 150rpx;
+}
+
+.container .add-dialog van-action-sheet .add-content {
+  height: 80vh;
+}
+
+.container .add-dialog van-action-sheet .add-content .top-bar {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .add-dialog van-action-sheet .add-content .top-bar .console {
+  color: #ff6666;
+}
+
+.container .add-dialog van-action-sheet .add-content .top-bar .confirm {
+  color: #3366cc;
+}
+
+.container .add-dialog van-action-sheet .add-content .select-list .select-wrap {
+  height: 400rpx;
+}
+
+.container .add-dialog van-action-sheet .add-content .select-list .select-wrap .select-item {
+  background-color: #fff;
+  color: #333;
+  display: inline-block;
+  border: 1rpx dashed #c5c5c5;
+  padding: 10rpx 15rpx;
+  margin: 0 10rpx 10rpx;
+  transition: all 0.3s;
+  border-radius: 50rpx;
+}
+
+.container .add-dialog van-action-sheet .add-content .select-list .select-wrap .active-item {
+  background-color: #3366cc;
+  color: #fff;
+  border: 1rpx solid #3366cc;
+}
+
+.container .picker-wrap {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.container .confirm-order {
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  bottom: 30rpx;
+  padding: 0 150rpx;
+}

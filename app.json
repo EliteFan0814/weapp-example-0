@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/finance/finance",
+    "pages/personal/personal",
+    "pages/location/location",
+    "pages/notice/notice",
+    "pages/notice/noticeDetail",
+    "pages/withdraw/withdraw",
+    "pages/withdraw/withdrawRecord",
+    "pages/changeInfo/changeInfo",
+    "pages/404/404",
+    "pages/login/login",
+    "pages/oldPhone/oldPhone",
+    "pages/newPhone/newPhone",
+    "pages/changePwd/changePwd",
+    "pages/regist/regist",
+    "pages/forgetPsd/forgetPsd",
+    "pages/bill/bill",
+    "pages/orderDetail/orderDetail"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于查询附近可接订单信息"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#BBBBBB",
+    "selectedColor": "#5975F0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "接单",
+        "iconPath": "static/img/index.png",
+        "selectedIconPath": "static/img/indexActive.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "static/img/order.png",
+        "selectedIconPath": "static/img/orderActive.png"
+      },
+      {
+        "pagePath": "pages/finance/finance",
+        "text": "财务",
+        "iconPath": "static/img/finance.png",
+        "selectedIconPath": "static/img/financeActive.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "static/img/personal.png",
+        "selectedIconPath": "static/img/personalActive.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-overlay": "@vant/weapp/overlay/index"
+  }
+}

@@ -1,0 +1,55 @@
+<view class="wrapper">
+	<image class="bg" src="../../static/img/personal/pe-bg.png" />
+	<view class="content">
+		<view class="head">
+			<view class="head-top" >
+				<view class="thumb-box">
+					<image class="thumb" src="{{info.picurl || '../../static/img/avint.png'}}" bindtap="changeInfo" />
+				</view>
+				<view class="head-info" bindtap="changeInfo">
+					<view class="name">{{info.realname}}</view>
+					<view class="phone">{{info.contact}}</view>
+				</view>
+				<image class="head-setup" bindtap="changeInfo" src="../../static/img/personal/setup.png" />
+			</view>
+			
+			 
+			<view class="head-card">
+				<view class="title">我的余额</view>
+				<view class="item" >
+					<view class="price" bindtap="goBill" >{{info.amount}}</view>
+					<view class="name" bindtap="goBill" >可提现金额</view>
+				</view>
+				<view class="dir"></view>
+				<view class="item" >
+					<view class="price" bindtap="goWithdrawRecord" >{{info.cash_finish}}</view>
+					<view class="name" bindtap="goWithdrawRecord" >已提现金额</view>
+				</view>
+			</view>
+			<view class="head-btn">
+				<image class="icon" src="../../static/img/personal/with.png" />
+				<view class="text" bindtap="goWithdraw" data-path="withdraw">申请提现</view>
+			</view>
+		</view>
+
+		<view class="list">
+			<view class="list-item" wx:for="{{list}}" wx:key="index" bindtap="open" data-path="{{item.path}}">
+				<view class="item-left">
+					<image class="icon" src="{{item.icon}}" alt=""/>
+					<text class="text">{{item.label}}</text>
+				</view>
+				<van-icon name="arrow" />
+			</view>
+			<view class="list-item" bindtap="contact">
+				<view class="item-left">
+					<image class="icon" src="../../static/img/personal/tel.png" alt=""/>
+					<text class="text">联系客服</text>
+				</view>
+				<van-icon name="arrow" />
+			</view>
+		</view>
+
+    <base-btn class="signOut"  btn-name="退出" bind:handleTap="signOut"/>
+
+	</view>
+</view> 

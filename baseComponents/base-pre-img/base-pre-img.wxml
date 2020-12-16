@@ -1,0 +1,9 @@
+<!-- baseComponents/base-pre-img/base-pre-img.wxml -->
+<block wx:if="{{singleShow}}">
+  <image mode="{{mode}}" class="base-img-style" src="{{list[0]}}" data-current-img="{{list[0]}}" 
+  data-img-list="{{list}}" bind:tap="previewImg"></image>
+</block>
+<block wx:else>
+    <image mode="{{mode}}" class="base-img-style" wx:for="{{list}}" wx:key="index" src="{{item}}" data-current-img="{{item}}" 
+  data-img-list="{{list}}" bind:tap="previewImg"></image>
+</block>

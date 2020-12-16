@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:if="{{list.length!=0}}">
+    <view class="block" wx:for="{{list}}" wx:key="*this">
+      <view bind:change="onChange" border="{{false}}">
+        <view name="{{index}}">
+          <view class="flex">
+            <view class="left">
+              <view class="money">{{item.amount}}</view>
+            </view>
+            <view class="right">
+              <view >{{item.create_time}}</view>
+              <view class="time">{{item.remark}}</view> 
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+  <base-no-list wx:else title="暂无账单记录"/>
+</view>

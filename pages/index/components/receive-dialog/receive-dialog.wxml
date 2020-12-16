@@ -1,0 +1,20 @@
+<view class="receive-dialog">
+  <van-dialog use-slot show="{{ true }}" show-confirm-button="{{false}}" close-on-click-overlay="{{true}}" bind:close="closeDialog">
+    <view class="dialog-wrap">
+      <image src="/static/img/index/bg.png" class="bg-img" />
+      <view class="dialog-content">
+        <view class="slogan">接单成功</view>
+        <view class="inner-box">
+          <view class="bell">
+            <image class="bell-img" src="/static/img/index/bell.png" />
+          </view>
+          <text class="title">家电维修</text>
+          <text class="notice">请保持电话畅通</text>
+        </view>
+        <view class="btn">
+          <base-btn btn-name="查看订单" bind:handleTap="goOrderDetail"></base-btn>
+        </view>
+      </view>
+    </view>
+  </van-dialog>
+</view>

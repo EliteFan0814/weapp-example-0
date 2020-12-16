@@ -1,0 +1,5 @@
+<!--pages/notice/noticeDetail.wxml-->
+<view class="container">
+  <!-- <rich-text class='content' nodes="{{info.content}}"></rich-text> -->
+  <rich-text class='content' nodes="<div style=‘width:100%;overflow:auto;white-space:pre-line;‘>{{info.content}}</div>"></rich-text>
+</view>

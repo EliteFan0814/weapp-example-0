@@ -1,0 +1,215 @@
+.container {
+  background-color: #fff;
+}
+
+.container .logo-wrap {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.container .logo-wrap .logo {
+  width: 300rpx;
+}
+
+.container .first-form {
+  padding-top: 20rpx;
+}
+
+.container .first-form .regist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .first-form .regist .account {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  font-size: 28rpx;
+  width: 85%;
+}
+
+.container .first-form .regist .account image {
+  width: 45rpx;
+  margin-right: 30rpx;
+}
+
+.container .first-form .regist .account .verify-left {
+  display: flex;
+}
+
+.container .first-form .regist .account .verify-left {
+  display: flex;
+}
+
+.container .first-form .regist .account .verify-left .verify-input {
+  width: 410rpx;
+}
+
+.container .first-form .regist .account .verify-right .verify-btn {
+  padding: 10rpx 15rpx;
+  border-radius: 30rpx;
+  color: #f87574;
+  text-align: center;
+  width: 120rpx;
+  border: 1px solid #f87574;
+  font-size: 24rpx;
+}
+
+.container .first-form .regist .account .verify-left {
+  display: flex;
+}
+
+.container .first-form .regist .account .verify-right .verify-btn {
+  padding: 10rpx 15rpx;
+  border-radius: 30rpx;
+  color: #f87574;
+  text-align: center;
+  width: 120rpx;
+  border: 1px solid #f87574;
+  font-size: 24rpx;
+}
+
+.container .first-form .first-btn {
+  margin-top: 40rpx;
+  text-align: center;
+}
+
+.container .second-form .skill-list .skill-item {
+  padding: 10rpx 15rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.container .second-form .skill-list .skill-item:last-child {
+  border-bottom: none;
+}
+
+.container .second-form .skill-list .skill-item .skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15rpx;
+  margin-bottom: 15rpx;
+  font-size: 28rpx;
+}
+
+.container .second-form .skill-list .skill-item .skill-top .left-wrap,
+.container .second-form .skill-list .skill-item .skill-top .right-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.container .second-form .skill-list .skill-item .skill-top .left-wrap text,
+.container .second-form .skill-list .skill-item .skill-top .right-wrap text {
+  padding-right: 10rpx;
+}
+
+.container .second-form .skill-list .skill-item .skill-top .left-wrap image {
+  border: 1px solid red;
+  margin-right: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.container .second-form .skill-list .skill-item .skill-top .right-wrap {
+  color: #5975f0;
+}
+
+.container .second-form .for-skill {
+  background-color: #fff;
+  bottom: 80rpx;
+  padding: 20rpx 150rpx 40rpx;
+}
+
+.container .second-form .skill-dialog van-action-sheet .skill-content {
+  position: relative;
+  height: 80vh;
+}
+
+.container .second-form .skill-dialog van-action-sheet .skill-content .top-bar {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .second-form .skill-dialog van-action-sheet .skill-content .top-bar .console {
+  color: #ff6666;
+}
+
+.container .second-form .skill-dialog van-action-sheet .skill-content .top-bar .confirm {
+  color: #3366cc;
+}
+
+.container .second-form .skill-dialog van-action-sheet .skill-content .skill-btm {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: 85rpx;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  font-size: 28rpx;
+}
+
+.container .second-form .skill-btm {
+  font-size: 24rpx;
+}
+
+.container .second-form .skill-btm .skill {
+  font-size: 26rpx;
+  background-color: #fff;
+  color: #333;
+  display: inline-block;
+  border: 1rpx dashed #c5c5c5;
+  padding: 8rpx 25rpx;
+  margin: 0 10rpx 10rpx;
+  transition: all 0.3s;
+  border-radius: 50rpx;
+}
+
+.container .second-form .skill-btm .active-skill {
+  background-color: #3366cc;
+  color: #fff;
+  border: 1rpx solid #3366cc;
+}
+
+.container .third-form .card-wrap .card-item {
+  margin: 20rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 26rpx;
+  color: #bbb;
+}
+
+.container .third-form .card-wrap .card-item .card-img {
+  width: 500rpx;
+}
+
+.container .third-form .last {
+  margin: 15px 0 25px;
+}
+
+.container .regist-btn {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20rpx 150rpx;
+}
+
+.container .regist-btn .second-operate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .regist-btn .login {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #333;
+}

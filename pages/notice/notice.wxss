@@ -1,0 +1,43 @@
+/* pages/notice/notice.wxss */
+.wrap {
+  min-height: 100vh;
+  padding: 0 20rpx 20rpx;
+}
+
+.wrap .list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 15rpx;
+  font-size: 28rpx;
+  border: 1px solid #f4f4f4;
+  box-shadow: 0rpx 5rpx 15rpx 0rpx rgba(89, 117, 240, 0.15);
+  margin-top: 20rpx;
+  border-radius: 25rpx;
+}
+
+.wrap .list-item .image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+
+.wrap .list-item .text {
+  flex: 1;
+}
+
+.wrap .list-item .text .title {
+  color: #666;
+}
+
+.wrap .list-item .text .desc {
+  width: 260rpx;
+  color: #999;
+  font-size: 26rpx;
+  margin: 10rpx 0;
+}
+
+.wrap .list-item .text .time {
+  color: #999;
+  font-size: 26rpx;
+}

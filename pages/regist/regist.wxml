@@ -1,0 +1,88 @@
+<view class="container">
+  <view class="logo-wrap">
+    <image class="logo" mode="widthFix" src="/static/img/logo.png" />
+  </view>
+  <!-- 常规信息 -->
+  <view wx:if="{{formStep===1}}" class="first-form">
+    <view class="regist">
+      <view class="account" wx:for="{{accountList}}" wx:key="index">
+        <view class="verify-left">
+          <image src="{{item.imgUrl}}" mode="widthFix" />
+          <input value="{{item.value}}" class="account-item {{index == 1 ? 'verify-input' : ''}}" placeholder="{{item.placeholder}}" password="{{item.isPsd}}" type="{{item.type}}" data-key="{{item.name}}" data-name="{{'accountList['+index+'].value'}}" bindinput="handleInput" />
+        </view>
+        <view class="verify-right" wx:if="{{index == 1}}">
+          <view wx:if="{{time}}" class="verify-btn" bind:tap="sendVerify">获取验证码</view>
+          <view wx:else class="verify-btn">{{timer}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="regist-btn first-btn">
+      <base-btn btn-name="下一步" bind:handleTap="jumpNext"></base-btn>
+      <view class="login" bind:tap="handleLogin">已有账号？立即登录</view>
+    </view>
+  </view>
+  <!-- 技能选择 -->
+  <view wx:elif="{{formStep===2}}" class="second-form">
+    <view class="skill-list">
+      <view wx:for="{{skillClassList}}" wx:key="index" class="skill-item">
+        <view class="skill-top">
+          <view class="left-wrap">
+            <!-- <image src="" /> -->
+            <text>{{item.name}}</text>
+          </view>
+          <view bind:tap="openDialog" data-skill-list="{{item.children}}" data-index="{{index}}" class="right-wrap">
+            <text>点击选择技能</text>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+        <view class="skill-btm">
+          <block wx:for="{{item.children}}" wx:for-index="secondIndex" wx:for-item="secondItem" wx:key="index">
+            <view wx:if="{{secondItem.isSelected||false}}" class="skill active-skill">{{secondItem.name}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="regist-btn for-skill">
+      <base-btn btn-name="下一步" bind:handleTap="jumpNext"></base-btn>
+      <view class="second-operate">
+        <view class="login" bind:tap="jumpPre">返回上一步</view>
+        <view class="login" bind:tap="handleLogin">已有账号？立即登录</view>
+      </view>
+    </view>
+    <!-- 弹框选择具体技能 -->
+    <view wx:if="{{isShowDialog}}" class="skill-dialog">
+      <van-action-sheet show="{{ isShowDialog }}">
+        <view class="skill-content">
+          <view class="top-bar">
+            <text bind:tap="closeDialog" class="console">取消</text>
+            <text class="title">选择服务技能</text>
+            <text bind:tap="confirmDialog" class="confirm">确认</text>
+          </view>
+          <view class="skill-btm">
+            <view wx:for="{{nowSkillList}}" wx:key="index" bind:tap="handleSelect" data-index="{{index}}" data-skill-id="{{item.skill_id}}" class="skill {{item.isSelected?'active-skill':''}}">
+              {{item.name}}
+            </view>
+          </view>
+        </view>
+      </van-action-sheet>
+    </view>
+  </view>
+  <!-- 证件照上传 -->
+  <view wx:else class="third-form">
+    <view class="card-wrap">
+      <view wx:for="{{cardList}}" wx:key="index" class="card-item">
+        <view data-img-index="{{index}}" data-img-key="{{item.name}}" bind:tap="upImg">
+          <base-pre-img mode="widthFix" imgList="{{item.value}}" isPreview="{{item.isupdate}}" base-img-style="card-img"></base-pre-img>
+        </view>
+        <text class="card-name">{{item.text}}</text>
+      </view>
+    </view>
+    <view class="regist-btn last">
+      <base-btn btn-name="注册" is-pushing="{{isRegisting}}" bind:handleTap="handRegist"></base-btn>
+      <view class="second-operate">
+        <view class="login" bind:tap="jumpPre">返回上一步</view>
+        <view class="login" bind:tap="handleLogin">立即登录</view>
+      </view>
+    </view>
+  </view>
+</view>

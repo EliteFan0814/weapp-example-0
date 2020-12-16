@@ -1,0 +1,16 @@
+<!--pages/detailapply/detailapply.wxml-->
+<view class="box">
+	<van-cell-group>
+		<van-field value="{{ phone}}" clearable label="原手机号" disabled bind:input="setinputval" data-name="phone" input-align="left" />
+		<van-cell-group>
+			<van-field value="{{ verify }}" center clearable bind:input="setinputval" data-name="verify" label="验证码" placeholder="请输入验证码" use-button-slottime>
+				<van-button slot="button" size="small" type="primary" bindtap="sendVerify" wx:if="{{time}}" color="#71adff">发送验证码</van-button>
+				<van-button slot="button" size="small" type="primary" wx:else>{{timer}}</van-button>
+			</van-field>
+		</van-cell-group>
+	</van-cell-group>
+
+	<view class="submit-btn">
+		<base-btn btnName="下一步" bindtap="onyanzheng" />
+	</view>
+</view>

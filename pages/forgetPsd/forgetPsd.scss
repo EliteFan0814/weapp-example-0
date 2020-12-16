@@ -1,0 +1,54 @@
+.container {
+  background-color: #fff;
+  .logo-wrap {
+    text-align: center;
+    margin-bottom: 30rpx;
+    .logo {
+      width: 300rpx;
+    }
+  }
+  .first-form {
+    padding-top: 20rpx;
+    .change-psd {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      .account {
+        display: flex;
+        align-items: center;
+        margin: 20rpx auto;
+        padding-bottom: 20rpx;
+        border-bottom: 1rpx solid #f5f5f5;
+        font-size: 28rpx;
+        width: 85%;
+        image {
+          width: 45rpx;
+          margin-right: 30rpx;
+        }
+        .verify-input{
+          width: 410rpx;
+        }
+      }
+      .verify {
+        justify-content: space-between;
+        .verify-left {
+          display: flex;
+        }
+        .verify-right {
+          .verify-btn {
+            padding: 10rpx 15rpx;
+            border-radius: 30rpx;
+            color: #F87574;
+            text-align: center;
+            width: 120rpx;
+            border: 1px solid #F87574;
+            font-size: 24rpx;
+          }
+        }
+      }
+    }
+  }
+  .change-btn {
+    padding: 100rpx 150rpx;
+  }
+}

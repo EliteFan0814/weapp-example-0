@@ -1,0 +1,17 @@
+{
+  "name": "dx_shuaxing_miniprogram",
+  "version": "0.0.1",
+  "description": "mini program",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "elitefan",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.5.0"
+  }
+}

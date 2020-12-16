@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "base-btn": "/baseComponents/base-btn/base-btn"
+  }
+}

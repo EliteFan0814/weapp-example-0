@@ -1,0 +1,120 @@
+<view class="container">
+  <view class="order-list">
+    <view class="contact">
+      <view class="left-info">
+        <image src="{{orderDetail.member_info.thumb}}" />
+      </view>
+      <view class="right-info">
+        <text>{{orderDetail.linkman}}</text>
+        <text bind:tap="phoneCall" data-phone="{{orderDetail.contact}}">{{orderDetail.contact}}</text>
+        <view catch:tap="openMap" data-address="{{orderDetail.address}}" data-lat="{{orderDetail.add_lat}}" data-lon="{{orderDetail.add_lon}}" class="map-wrap">
+          <text class="right-value">{{orderDetail.address}}</text>
+          <van-icon name="arrow" />
+        </view>
+        <!-- <image bind:tap="sendMessage" src="/static/img/order/message.png" class="message" /> -->
+        <!-- <image bind:tap="phoneCall" data-phone="{{orderDetail.contact}}" src="/static/img/order/phone.png" class="phone" /> -->
+      </view>
+    </view>
+    <view class="order-item">
+      <view class="card-head">
+        <text>订单号：{{orderDetail.order_sn}}</text>
+        <text>{{orderDetail.status_str}}</text>
+      </view>
+      <!-- 单个项目列表 -->
+      <view wx:for="{{orderItemList}}" wx:key="order_id" class="detail-list">
+        <view class="title">
+          <view>{{item.product_name}}</view>
+          <image wx:if="{{canChangeOrder}}" bind:tap="deleteOrderItem" data-index="{index}" src="/static/img/order/delete.png" />
+        </view>
+        <view class="serve-item">
+          <view class="detail-item">
+            <view class="input-wrap">
+              <text class="left-name">服务</text>
+              <text class="right-value serve-list">{{item.skill_name}}</text>
+            </view>
+          </view>
+          <view class="detail-item">
+            <view class="input-wrap">
+              <text class="left-name">金额</text>
+              <input disabled="{{!canChangeOrder}}" value="{{item.final_price}}" data-index="{{index}}" bindinput="changePrice" placeholder="请填写金额" type="digit" />
+            </view>
+            <!-- <view wx:if="{{canChangeOrder}}" class="right-btn">
+              <base-btn bind:handleTap="confirmPrice" data-index="{{index}}" btn-name="确认修改" base-btn-style="confirm-style"></base-btn>
+            </view> -->
+          </view>
+        </view>
+        <!-- <view class="detail-item">
+          <view class="input-wrap">
+            <text class="left-name">备注</text>
+            <input value="{{price}}" placeholder="请填写备注信息" />
+          </view>
+        </view> -->
+        <!-- <view bind:tap="openDialog" class="detail-item">
+          <view>
+            <text class="left-name">增项</text>
+            <text class="right-value">{{addNew}}</text>
+          </view>
+          <view>
+            <van-icon name="arrow" />
+          </view>
+        </view> -->
+      </view>
+      <view class="detail-list">
+        <view class="title">
+          <text>合计金额</text>
+          <text class="total-price">{{totalPrice}} 元</text>
+        </view>
+      </view>
+      <view wx:if="{{showConfirmArrive}}" class="add-btn">
+        <base-btn btn-name="确认抵达" isPushing="{{isSendingArrive}}" catch:tap="handleArrived" data-index="{{index}}" data-order-id="{{orderDetail.order_id}}" base-btn-style="confirm-style"></base-btn>
+      </view>
+      <view wx:if="{{canChangeOrder}}" class="add-btn">
+        <base-btn bind:handleTap="handleShowAddDialog" btn-name="新增服务" is-pushing="{{isSending}}" base-btn-style="confirm-style"></base-btn>
+      </view>
+    </view>
+    <!-- 订单日志 -->
+    <view class="order-item">
+      <view class="card-head">
+        <text>订单日志</text>
+      </view>
+      <view wx:for="{{orderLog}}" wx:key="id" class="log-item">
+        <view class="log-title">{{item.remark}}</view>
+        <view class="log-content">
+          <text>{{item.content}}</text>
+          <text>{{item.create_time}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 确认最终价格按钮 -->
+  <view wx:if="{{canChangeOrder}}" class="confirm-order">
+    <base-btn bind:handleTap="confirmOrder" btn-name="确认最终价" is-pushing="{{isConfirming}}" base-btn-style="confirm-style"></base-btn>
+  </view>
+  <!-- 新增服务项弹框 -->
+  <view class="add-dialog">
+    <van-action-sheet show="{{ isShowAddDialog }}">
+      <view class="add-content">
+        <view class="top-bar">
+          <text bind:tap="handleShowAddDialog" class="console">取消</text>
+          <text class="title">新增服务项</text>
+          <text bind:tap="confirmDialog" class="confirm">确认</text>
+        </view>
+        <view class="select-list">
+          <van-collapse accordion value="{{ activeSelect }}" bind:change="nowOpen">
+            <van-collapse-item disabled="{{item.disabled}}" value="{{finallSelectedList[index].name}}" wx:for="{{selectList}}" wx:key="title" title="{{item.title}}" name="{{item.type}}">
+              <scroll-view bindscrolltolower="infinityGetProductList" data-use-infinity="{{index === 1?true:false}}" scroll-y="true" class="select-wrap">
+                <view wx:for="{{item.children}}" wx:key="sort" wx:for-item="innerItem" wx:for-index="innerIndex" data-index="{{index}}" data-inner-index="{{innerIndex}}" bind:tap="handleSelectItem" class="select-item {{innerItem.isSelected?'active-item':''}}">
+                  {{innerItem.name}}
+                </view>
+              </scroll-view>
+            </van-collapse-item>
+          </van-collapse>
+          <!-- <van-cell bind:tap="newSelect" wx:for="{{selectList}}" wx:key="title" title="{{item.title}}" data-type="{{item.type}}" is-link value="{{item.value}}" /> -->
+        </view>
+        <!-- <view wx:if="{{isShowDialog}}" class="picker-wrap">
+          <van-picker columns="{{ columns }}" show-toolbar title="选择增项" visible-item-count="6" item-height="30" bind:cancel="closeDialog" bind:confirm="submitSelect" />
+        </view> -->
+      </view>
+    </van-action-sheet>
+  </view>
+</view>

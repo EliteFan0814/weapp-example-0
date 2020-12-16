@@ -1,0 +1,78 @@
+<view class="container">
+		<view class="tabs-wrap">
+				<van-tabs bind:change="changeTab" active="{{screen}}" sticky color="#5975f0">
+						<van-tab wx:for="{{tabsList}}" wx:key="index" title="{{item.label}}" name="{{item.value}}"></van-tab>
+				</van-tabs>
+		</view>
+		<view wx:if="{{orderList.length}}" class="order-list">
+				<view wx:for="{{orderList}}" wx:key="index" data-order-id="{{item.order_id}}" bind:tap="goOrderDetail" class="order-item">
+						<view class="card-head">
+								<text>订单号：{{item.order_sn}}</text>
+								<text>{{item.status_str}}</text>
+						</view>
+						<!-- <view class="title">{{item.title||'暂无'}}</view> -->
+						<view  class="contact">
+								<view class="left-info">
+										<image src="{{item.member_info.thumb}}" />
+										<text>{{item.linkman}}</text>
+								</view>
+								<view catch:tap="phoneCall" data-phone="{{item.contact}}" class="right-info">
+										<!-- <image bind:tap="sendMessage" src="/static/img/order/message.png" class="message" /> -->
+										<image wx:if="{{item.status>2&&item.status<6}}" data-phone="{{item.contact}}" src="/static/img/order/phone.png" class="phone" />
+								</view>
+						</view>
+						<view class="detail-list">
+								<view class="detail-item">
+										<view class="cell-wrap">
+												<text class="left-name">预算</text>
+												<text class="right-value">{{item.budget}}</text>
+										</view>
+								</view>
+								<view class="detail-item">
+										<view class="cell-wrap">
+												<text class="left-name">上门时间</text>
+												<text class="right-value">{{item.visiting_time}}</text>
+										</view>
+								</view>
+								<view catch:tap="openMap" data-address="{{item.address}}" data-lat="{{item.add_lat}}" data-lon="{{item.add_lon}}" 
+								class="detail-item">
+										<view class="cell-wrap">
+												<text class="left-name">地址</text>
+												<text class="right-value">{{item.address}}</text>
+										</view>
+										<van-icon name="arrow" />
+								</view>
+								<view class="detail-item">
+										<view class="cell-wrap">
+												<text class="left-name">备注</text>
+												<text class="right-value">{{item.remark||'暂无备注'}}</text>
+										</view>
+								</view>
+						</view>
+						<!-- <view wx:if="{{item.status === 3}}" class="arrive"> -->
+						<view wx:if="{{item.status !== 6}}" class="arrive">
+								<view class="left-info {{item.status===3?'':'not-visibility'}}">
+										<text class="arrived">签到</text>
+										<text class="toast">通知客户你已到达指定地点</text>
+								</view>
+								<view wx:if="{{item.status === 3}}" class="right-btn">
+										<base-btn btn-name="确认抵达" isPushing="{{isSendingArrive}}" catch:tap="handleArrived" data-index="{{index}}" data-order-id="{{item.order_id}}" base-btn-style="confirm-style"></base-btn>
+								</view>
+								<view wx:if="{{item.status === 4}}" class="right-btn">
+										<base-btn btn-name="定 价" catch:tap="goOrderDetail" data-index="{{index}}" data-order-id="{{item.order_id}}" base-btn-style="confirm-style"></base-btn>
+								</view>
+								<view wx:if="{{item.status === 5}}" class="right-btn">
+										<base-btn btn-name="重新定价" catch:tap="goOrderDetail" data-index="{{index}}" data-order-id="{{item.order_id}}" base-btn-style="confirm-style"></base-btn>
+								</view>
+						</view>
+						<!-- <view wx:if="{{item.status === 4}}" class="arrive">
+								<view class="left-info">
+										<text class="arrived">定价</text>
+										<text class="toast">请根据实际情况酌情定价</text>
+								</view>
+								<view class="right-btn">点击定价</view>
+						</view> -->
+				</view>
+		</view>
+		<base-no-list wx:else></base-no-list>
+</view>

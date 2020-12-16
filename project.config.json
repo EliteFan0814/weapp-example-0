@@ -1,0 +1,188 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.2",
+  "appid": "wx96e78d930309662d",
+  "projectname": "%E5%88%B7%E6%98%9F%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/finance/finance",
+          "pathName": "pages/finance/finance",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "订单",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "财务",
+          "pathName": "pages/finance/finance",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "登录",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "注册",
+          "pathName": "pages/regist/regist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/personal/personal",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/changeInfo/changeInfo",
+          "pathName": "pages/changeInfo/changeInfo",
+          "query": "name=张三&phone=150385",
+          "scene": null
+        },
+        {
+          "id": 7,
+          "name": "pages/regist/regist",
+          "pathName": "pages/regist/regist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 8,
+          "name": "订单详情",
+          "pathName": "pages/orderDetail/orderDetail",
+          "query": "orderId=2",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/notice/notice",
+          "pathName": "pages/notice/notice",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/notice/noticeDetail",
+          "pathName": "pages/notice/noticeDetail",
+          "query": "id=1&title=师傅协议",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/changePwd/changePwd",
+          "pathName": "pages/changePwd/changePwd",
+          "query": "id=1&title=师傅协议",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/changePwd/changePwd",
+          "pathName": "pages/changePwd/changePwd",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/changePhone/changePhone",
+          "pathName": "pages/changePhone/changePhone",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/withdraw/withdraw",
+          "pathName": "pages/withdraw/withdraw",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/forgetPsd/forgetPsd",
+          "pathName": "pages/forgetPsd/forgetPsd",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/forgetPsd/forgetPsd",
+          "pathName": "pages/forgetPsd/forgetPsd",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

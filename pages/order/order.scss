@@ -1,0 +1,131 @@
+.container {
+  position: relative;
+  .tabs-wrap {
+    width: 100%;
+    position: absolute;
+  }
+  .order-list {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    top: 110rpx;
+    bottom: 0;
+    overflow-y: scroll;
+    padding: 0rpx 20rpx 10rpx;
+    font-size: 28rpx;
+    .order-item {
+      border-radius: 30rpx;
+      background-color: #fff;
+      padding: 20rpx 50rpx;
+      margin-bottom: 20rpx;
+      .card-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20rpx;
+      }
+      .title {
+        line-height: 34rpx;
+        letter-spacing: 2rpx;
+        color: #333333;
+        margin-bottom: 50rpx;
+      }
+      .contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50rpx;
+        > view {
+          display: flex;
+          align-items: center;
+        }
+        .left-info {
+          image {
+            width: 60rpx;
+            height: 60rpx;
+            border-radius: 50%;
+            margin-right: 25rpx;
+            background-color: #5975f0;
+          }
+        }
+        .right-info {
+          .message {
+            margin-right: 80rpx;
+            width: 31rpx;
+            height: 29rpx;
+          }
+          .phone {
+            padding: 15rpx 0rpx 15rpx 30rpx;
+            width: 26rpx;
+            height: 34rpx;
+          }
+        }
+      }
+      .detail-list {
+        .detail-item {
+          margin-bottom: 45rpx;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 28rpx;
+          line-height: 34rpx;
+          letter-spacing: 0rpx;
+          color: #333333;
+          .cell-wrap {
+            display: flex;
+            align-items: center;
+            .left-name {
+              letter-spacing: 1rpx;
+              color: #999999;
+              margin-right: 30rpx;
+              width: 120rpx; /* 这里一定要使用 width 不能使用 min-width max-width */
+              height: 34rpx; /* 一定要限定高度，高度和 line-height 一致时为上下居中显示 */
+              text-align: justify;
+              text-align-last: justify;
+              text-justify: inter-ideograph;
+              &::after {
+                display: inline-block;
+                content: '';
+                width: 100%;
+              }
+            }
+            .right-value {
+              max-width: 450rpx;
+            }
+          }
+        }
+      }
+      .arrive {
+        padding-top: 20rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 28rpx;
+        line-height: 34rpx;
+        letter-spacing: 1rpx;
+        color: #333333;
+        .left-info {
+          visibility: hidden;
+          display: flex;
+          flex-direction: column;
+          .toast {
+            font-size: 24rpx;
+            color: #999999;
+          }
+        }
+        .not-visibility {
+          visibility: hidden;
+        }
+        .right-btn {
+          font-size: 30rpx;
+          letter-spacing: 2rpx;
+          color: #5975f0;
+          .confirm-style {
+            font-size: 25rpx;
+            padding: 10rpx 15rpx;
+          }
+        }
+      }
+    }
+  }
+}

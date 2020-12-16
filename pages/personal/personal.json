@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "base-btn": "../../baseComponents/base-btn/base-btn"
+  },
+  "navigationBarTitleText": "我的",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

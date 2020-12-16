@@ -1,0 +1,229 @@
+/* pages/finance/finance.wxss */
+.finance {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.finance .thumb {
+  margin-top: 30rpx;
+  width: 126rpx;
+  height: 123rpx;
+  border-radius: 50%;
+}
+
+.finance .head {
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+}
+
+.finance .head-welcome {
+  font-size: 28rpx;
+  letter-spacing: 3rpx;
+  color: #999999;
+}
+
+.finance .head-name {
+  margin: 20rpx 0;
+  font-size: 40rpx;
+  letter-spacing: 4rpx;
+  color: #333333;
+}
+
+.finance .card {
+  height: 300rpx;
+  color: #ffffff;
+  position: relative;
+}
+
+.finance .card .bg {
+  position: absolute;
+  width: 100%;
+  height: 300rpx;
+}
+
+.finance .card .other-wigdget {
+  padding: 50rpx 0 40rpx 55rpx;
+  position: absolute;
+  z-index: 9;
+}
+
+.finance .card-top .text {
+  font-size: 24rpx;
+}
+
+.finance .card-top .text .eye {
+  width: 25rpx;
+  height: 20rpx;
+}
+
+.finance .card-top .price {
+  font-size: 50rpx;
+  margin: 20rpx 0 25rpx;
+}
+
+.finance .card-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.finance .card-bottom .item:last-child {
+  margin-left: 270rpx;
+}
+
+.finance .card-bottom .item .text {
+  font-size: 24rpx;
+}
+
+.finance .card-bottom .item .text .sy {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.finance .card-bottom .item .price {
+  margin-top: 5rpx;
+  font-size: 30rpx;
+}
+
+.finance .with-wrap {
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.finance .with-wrap-item:first-child {
+  border-radius: 20rpx;
+}
+
+.finance .with-wrap-item:last-child {
+  margin-left: 35rpx;
+  border-radius: 20rpx;
+}
+
+.finance .with-wrap-item:last-child .text {
+  margin: 25rpx 0 25rpx;
+}
+
+.finance .with-wrap-item {
+  flex: 1;
+  position: relative;
+  height: 240rpx;
+  padding: 10rpx 0;
+}
+
+.finance .with-wrap-item .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.finance .with-wrap-item .other-wigdget {
+  padding: 30rpx;
+  position: absolute;
+  z-index: 9;
+}
+
+.finance .with-wrap-item .icon-with {
+  width: 60rpx;
+  height: 46rpx;
+}
+
+.finance .with-wrap-item .icon-money {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.finance .with-wrap-item .text {
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+  margin: 35rpx 0 30rpx;
+}
+
+.finance .with-wrap-item .price {
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
+}
+
+.finance .bottom-wrap {
+  margin: 25rpx 0 0;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.finance .bottom-wrap-item:nth-child(n+3) {
+  margin-top: 25rpx;
+}
+
+.finance .bottom-wrap-item:nth-child(Odd) {
+  margin-right: 50rpx;
+}
+
+.finance .bottom-wrap-item {
+  display: flex;
+  align-items: center;
+  padding: 15rpx 0;
+  background-color: #f1f1f1;
+  border-radius: 12rpx;
+  width: 46%;
+}
+
+.finance .bottom-wrap-item .icon-box {
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+}
+
+.finance .bottom-wrap-item .one {
+  background: #1ccd9d;
+}
+
+.finance .bottom-wrap-item .one .icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.finance .bottom-wrap-item .two {
+  background: #fcaf2a;
+}
+
+.finance .bottom-wrap-item .two .icon {
+  width: 37rpx;
+  height: 42rpx;
+}
+
+.finance .bottom-wrap-item .three {
+  background: #ff695b;
+}
+
+.finance .bottom-wrap-item .three .icon {
+  width: 35rpx;
+  height: 42rpx;
+}
+
+.finance .bottom-wrap-item .right .text {
+  font-size: 24rpx;
+  letter-spacing: 1rpx;
+  color: #333333;
+}
+
+.finance .bottom-wrap-item .right .number {
+  font-size: 30rpx;
+  letter-spacing: 1rpx;
+  margin-top: 20rpx;
+}
+
+.finance .bottom-wrap-item .right .price {
+  color: #1ccd9d;
+}
+
+.finance .bottom-wrap-item .right .num {
+  color: #fcaf2a;
+}
+
+.finance .bottom-wrap-item .right .amount {
+  color: #ff6951;
+}

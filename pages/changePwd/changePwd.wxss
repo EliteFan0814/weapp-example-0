@@ -1,0 +1,29 @@
+/* pages/changePwd/changePwd.wxss */
+.wrap {
+  padding: 0 20rpx;
+}
+
+.wrap .field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.wrap .field .text {
+  flex: 1;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.wrap .field .input {
+  flex: 1;
+  text-align: right;
+  font-size: 28rpx;
+}
+
+.wrap .submit {
+  margin: 100rpx 50rpx 0;
+  text-align: center;
+}
