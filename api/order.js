@@ -12,9 +12,13 @@ export function confirmArrived(order_id) {
 export function getOrderDetail(order_id) {
   return fly.get('/worker/order/info', { order_id })
 }
-// 选择产品分类
-export function getCateList() {
+// 选择产品列表
+export function getGoodsList() {
   return fly.get('/worker/category/lists')
+}
+// 选择产品分类
+export function getCateList(cate_id) {
+  return fly.get('/worker/category/lists',{cate_id})
 }
 // 选择产品列表
 export function getProductList(page, row, cate_id) {

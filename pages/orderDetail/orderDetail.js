@@ -1,5 +1,6 @@
 import {
   getOrderDetail,
+  getGoodsList,
   getCateList,
   getProductList,
   getSkillList,
@@ -12,6 +13,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    goodsList: [],
+    goodsListName: undefined,
+    goodsListId: undefined,
     orderId: null,
     // price: null,
     isConfirming: false,
@@ -21,7 +25,8 @@ Page({
     orderDetail: null,
     orderItemList: [],
     orderLog: [],
-    activeSelect: 'category',
+    // activeSelect: 'category',
+    activeSelect: 'goodsList',
     selectedCateId: null, // 记录下所选取的 cateId
     prodListPage: 1,
     prodListRow: 10,
@@ -33,7 +38,7 @@ Page({
         type: 'category',
         arrayTo: 'cateList',
         id: null,
-        disabled: false,
+        disabled: true,
         children: []
       },
       {
@@ -72,7 +77,8 @@ Page({
       orderId
     })
     this.getOrderDetail()
-    this.getCateList()
+    this.getGoodsList()
+    // this.getCateList()
   },
 
   /**
@@ -143,8 +149,22 @@ Page({
     })
   },
   // 初始默认获取第一级分类列表
-  getCateList() {
-    getCateList()
+  getGoodsList() {
+    getGoodsList()
+      .then((res) => {
+        let temp = res.data.list
+        temp.forEach((item) => {
+          item.isSelected = false
+        })
+        this.setData({
+          goodsList: res.data.list
+        })
+      })
+      .catch(() => {})
+  },
+  // 初始默认获取第一级分类列表
+  getCateList(id) {
+    getCateList(id)
       .then((res) => {
         const key = 'selectList[0].children'
         let temp = res.data.list
@@ -219,6 +239,7 @@ Page({
       this.setData({
         orderItemList: this.data.orderItemList
       })
+      console.log('xxx', this.data.orderItemList)
       this.handleShowAddDialog()
     } else {
       app.toastFail('请选择全部选项')
@@ -306,6 +327,32 @@ Page({
       })
     })
   },
+  // 处理产品列表的选择
+  handleSelectGoodsList(e) {
+    const index = e.currentTarget.dataset.index
+    let temp = this.data.goodsList
+    temp.forEach((item, innerIndex) => {
+      if (index === innerIndex) {
+        if (item.isSelected === true) {
+          // 处理点击同一个选中的选项
+        } else {
+          item.isSelected = true
+          const key = 'selectList[0].disabled'
+          this.setData({
+            goodsListName: item.name,
+            goodsListId: item.cate_id,
+            [key]: false
+          })
+          this.getCateList(this.data.goodsListId)
+        }
+      } else {
+        item.isSelected = false
+      }
+    })
+    this.setData({
+      goodsList: temp
+    })
+  },
   // 处理选中某一项
   handleSelectItem(e) {
     console.log('手风琴', e)
@@ -377,12 +424,10 @@ Page({
   },
   // 确认最终价格
   confirmOrder() {
-    let verify = false
+    let verify = true
     this.data.orderItemList.map((item) => {
       if (!item.final_price) {
         verify = false
-      } else {
-        verify = true
       }
     })
     if (verify) {

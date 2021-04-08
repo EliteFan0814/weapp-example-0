@@ -8,7 +8,8 @@
       <view class="account" wx:for="{{accountList}}" wx:key="index">
         <view class="verify-left">
           <image src="{{item.imgUrl}}" mode="widthFix" />
-          <input value="{{item.value}}" class="account-item {{index == 1 ? 'verify-input' : ''}}" placeholder="{{item.placeholder}}" password="{{item.isPsd}}" type="{{item.type}}" data-key="{{item.name}}" data-name="{{'accountList['+index+'].value'}}" bindinput="handleInput" />
+          <input wx:if="{{item.isSelect}}" value="{{areaStr}}" disabled="{{true}}" class="account-item {{index == 1 ? 'verify-input' : ''}}" placeholder="{{item.placeholder}}" password="{{item.isPsd}}" type="{{item.type}}" data-key="{{item.name}}" data-name="{{'accountList['+index+'].value'}}" bindtap="handleAreaSelect" />
+          <input wx:else value="{{item.value}}" class="account-item {{index == 1 ? 'verify-input' : ''}}" placeholder="{{item.placeholder}}" password="{{item.isPsd}}" type="{{item.type}}" data-key="{{item.name}}" data-name="{{'accountList['+index+'].value'}}" bindinput="handleInput" />
         </view>
         <view class="verify-right" wx:if="{{index == 1}}">
           <view wx:if="{{time}}" class="verify-btn" bind:tap="sendVerify">获取验证码</view>
@@ -16,8 +17,38 @@
         </view>
       </view>
     </view>
+    <!-- 注册协议 -->
+    <view class="agreement">
+      <!-- <view class="checkbox-wrap">
+        <van-checkbox value="{{ isAgree }}" checked-color="#f87574" label-class="label-style" icon-size="35rpx" bind:change="handleAgreeCheckbox">
+          同意
+          <text catchtap="openAgreement" class="click-wrap">注册协议</text>
+        </van-checkbox>
+      </view> -->
+      <van-dialog use-slot title="注册协议" show="{{ showAgreement }}" confirmButtonText="同意" cancel-button-text="拒绝" confirm-button-color="#000" cancel-button-color="#FF0033" show-cancel-button bind:confirm="handleAgree" bind:cancel="handleRefuse" bind:close="closeAgreement">
+        <view class="agreement-detail">
+          <view class="content">
+            <rich-text nodes="{{agreementDetail}}"></rich-text>
+          </view>
+        </view>
+      </van-dialog>
+      <!-- <van-popup show="{{ showAgreement }}" custom-class="agree-root" round position="bottom" custom-style="height: 800rpx" bind:close="closeAgreement">
+        <view class="agreement-detail">
+          <view class="title">
+            <view></view>
+            <view class="title-inner">注册协议</view>
+            <view class="close-icon" bind:tap="closeAgreement">
+              <van-icon name="cross" />
+            </view>
+          </view>
+          <view class="content">
+            <rich-text nodes="{{agreementDetail}}"></rich-text>
+          </view>
+        </view>
+      </van-popup> -->
+    </view>
     <view class="regist-btn first-btn">
-      <base-btn btn-name="下一步" bind:handleTap="jumpNext"></base-btn>
+      <base-btn disabled="{{!isAgree}}" btn-name="下一步" bind:handleTap="jumpNext"></base-btn>
       <view class="login" bind:tap="handleLogin">已有账号？立即登录</view>
     </view>
   </view>
@@ -37,7 +68,10 @@
         </view>
         <view class="skill-btm">
           <block wx:for="{{item.children}}" wx:for-index="secondIndex" wx:for-item="secondItem" wx:key="index">
-            <view wx:if="{{secondItem.isSelected||false}}" class="skill active-skill">{{secondItem.name}}</view>
+            <!-- 判断是否是全选按钮，如果是，则不显示全选按钮 -->
+            <block wx:if="{{!secondItem.isSelectAllBtn}}">
+              <view wx:if="{{secondItem.isSelected||false}}" class="skill active-skill">{{secondItem.name}}</view>
+            </block>
           </block>
         </view>
       </view>
@@ -84,5 +118,12 @@
         <view class="login" bind:tap="handleLogin">立即登录</view>
       </view>
     </view>
+  </view>
+  <view class="area-wrap">
+    <van-action-sheet show="{{ showArea }}" title="选择区域" bind:close="handleAreaSelect">
+      <view class="list-wrap">
+        <van-tree-select items="{{ areaList }}" main-active-index="{{ mainActiveIndex }}" active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem" />
+      </view>
+    </van-action-sheet>
   </view>
 </view>

@@ -200,6 +200,10 @@
   border: 1rpx solid #3366cc;
 }
 
+.container .add-dialog van-action-sheet .add-content .select-list .select-wrap .second-wrap {
+  border: 1px solid red;
+}
+
 .container .picker-wrap {
   box-sizing: border-box;
   width: 100%;

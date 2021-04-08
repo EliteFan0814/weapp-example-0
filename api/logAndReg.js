@@ -23,3 +23,11 @@ export function findPwd(data) {
   return fly.post('/worker/pub/findPwd', data)
 }
 
+// 注册协议
+export function getAgreement() {
+  return fly.get('/worker/article/info?id=2')
+}
+// 注册协议
+export function getAreaList() {
+  return fly.get('/worker/pub/region')
+}

@@ -1,13 +1,31 @@
 const app = getApp()
-import { regist, getSkillList, sendVerify } from '../../api/logAndReg'
+import { regist, getSkillList, sendVerify, getAgreement, getAreaList } from '../../api/logAndReg'
 Page({
   data: {
+    showArea: false,
+    mainActiveIndex: 0,
+    activeId: null,
+    agent_id: null,
+    areaStr: '',
+    showAgreement: true,
     isRegisting: false,
     isFirstForm: true,
     formStep: 1,
     isShowDialog: false,
     name: '',
+    areaList: [],
     accountList: [
+      {
+        name: 'area',
+        text: '区域选择',
+        imgUrl: '/static/img/regist/address.png',
+        value: '',
+        isPsd: false,
+        isVerify: false,
+        isSelect: true,
+        type: 'text',
+        placeholder: '请选择区域'
+      },
       {
         name: 'phone',
         text: '手机号',
@@ -58,14 +76,14 @@ Page({
         placeholder: '请输入家庭住址'
       },
       {
-        name: 'descript',
-        text: '个人简介',
+        name: 'referrer',
+        text: '推荐人',
         imgUrl: '/static/img/regist/name.png',
         value: '',
         isPsd: false,
         isVerify: false,
         type: 'text',
-        placeholder: '请输入个人简介'
+        placeholder: '请输入推荐人姓名'
       }
     ],
     skillClassList: [],
@@ -117,23 +135,52 @@ Page({
       verify: '',
       realname: '',
       address: '',
-      descript: '',
+      referrer: '',
       id_front: '',
       id_back: '',
       qualification: '',
       skill_arr: []
     },
+    isAgree: false,
+    agreementDetail: undefined,
     time: true,
     timer: 0
   },
-
+  handleAreaSelect() {
+    this.setData({
+      showArea: !this.data.showArea
+    })
+  },
+  onClickNav({ detail = {} }) {
+    this.setData({
+      mainActiveIndex: detail.index || 0
+    })
+  },
+  onClickItem({ detail = {} }) {
+    console.log(detail)
+    const activeId = this.data.activeId === detail.id ? null : detail.id
+    this.setData({ activeId: activeId, agent_id: detail.agent_id, areaStr: detail.text, showArea: false })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    getSkillList().then((res) => {
+    getSkillList()
+      .then((res) => {
+        this.setData({
+          skillClassList: res.data.list
+        })
+      })
+      .catch((err) => {})
+    getAgreement().then((res) => {
       this.setData({
-        skillClassList: res.data.list
+        agreementDetail: res.data.info.content
+      })
+    })
+    getAreaList().then((res) => {
+      console.log(res)
+      this.setData({
+        areaList: res.data.list
       })
     })
   },
@@ -182,6 +229,41 @@ Page({
       }
     }, 1000)
   },
+  openAgreement() {
+    this.setData({
+      showAgreement: true
+    })
+  },
+  closeAgreement() {
+    this.setData({
+      showAgreement: false
+    })
+  },
+  // 处理同意按钮
+  handleAgreeCheckbox(e) {
+    this.setData({
+      isAgree: e.detail
+    })
+  },
+  handleAgree() {
+    this.setData({
+      isAgree: true
+    })
+  },
+  handleAgree() {
+    this.setData({
+      isAgree: true
+    })
+  },
+  handleRefuse() {
+    wx.navigateBack({
+      delta: 1
+    })
+    // this.setData({
+    //   showAgreement: false,
+    //   isAgree: false
+    // })
+  },
   // 处理 input 的双向绑定同时过滤出上传的数据
   handleInput(e) {
     app.setData(e, this)
@@ -219,6 +301,10 @@ Page({
       item.isSelected = item.isSelected || false
       return item
     })
+    // 判断全选按钮是否存在，如果存在就不再unshift
+    if (!filterSkillList[0].isSelectAllBtn) {
+      filterSkillList.unshift({ label: '全选', name: '全选', isSelectAllBtn: true, isSelected: false })
+    }
     // 设置弹框中的技能列表
     this.setData({
       isShowDialog: true,
@@ -229,12 +315,37 @@ Page({
   // 处理技能的选择和取消
   handleSelect(e) {
     const index = e.currentTarget.dataset.index
-    const skillId = e.currentTarget.dataset.skillId
-    let item = this.data.nowSkillList[index]
-    item.isSelected = !item.isSelected
-    this.setData({
-      nowSkillList: this.data.nowSkillList
-    })
+    const flagAll = this.data.nowSkillList[0].isSelected
+    if (index === 0) {
+      // 如果点击的是全选按钮，则遍历数组进行全选
+      this.data.nowSkillList.map((item) => {
+        item.isSelected = !flagAll
+      })
+      this.setData({
+        nowSkillList: this.data.nowSkillList
+      })
+    } else {
+      // 如果点击的是普通按钮
+      const skillId = e.currentTarget.dataset.skillId
+      let item = this.data.nowSkillList[index]
+      item.isSelected = !item.isSelected
+      // this.setData({
+      //   nowSkillList: this.data.nowSkillList
+      // })
+      const temp = this.data.nowSkillList
+      // 遍历普通按钮，判断是否全部选中
+      let innerFlag = true
+      for (let i = 1; i < temp.length; i++) {
+        if (!temp[i].isSelected) {
+          innerFlag = false
+          break
+        }
+      }
+      temp[0].isSelected = innerFlag
+      this.setData({
+        nowSkillList: this.data.nowSkillList
+      })
+    }
   },
   // 关闭选择技能
   closeDialog() {
@@ -264,7 +375,6 @@ Page({
         }, val)
       }
     }, [])
-    console.log(111, this.data.skillClassList)
     const bindKey = `uploadData.skill_arr`
     this.setData({
       [bindKey]: AllselectedSkill
@@ -273,9 +383,11 @@ Page({
   // 处理进入下一步
   jumpNext() {
     let { formStep, uploadData } = this.data
-    const { phone, verify, realname, address, descript, skill_arr } = uploadData
+    const { phone, verify, realname, address, referrer, skill_arr } = uploadData
     if (formStep == 1) {
-      if (!phone) {
+      if (!this.data.agent_id) {
+        return app.toastFail('请选择地区')
+      } else if (!phone) {
         return app.toastFail('请输入手机号')
       } else if (!verify) {
         return app.toastFail('请输入验证码')
@@ -283,8 +395,8 @@ Page({
         return app.toastFail('请输入真实姓名')
       } else if (!address) {
         return app.toastFail('请输入家庭地址')
-      } else if (!descript) {
-        return app.toastFail('请输入个人简介')
+      } else if (!referrer) {
+        return app.toastFail('请输入推荐人姓名')
       }
     } else if (formStep == 2) {
       if (!skill_arr.length) {
@@ -303,7 +415,6 @@ Page({
   },
   // 处理登陆按钮
   handleLogin() {
-    console.log(wx)
     wx.navigateTo({
       url: '/pages/login/login'
     })
@@ -311,6 +422,7 @@ Page({
   // 处理注册
   handRegist() {
     const { uploadData } = this.data
+    uploadData.agent_id = this.data.agent_id
     const { id_front, id_back, qualification } = uploadData
     if (!id_front) {
       app.toastFail('请上传身份证正面照')
@@ -324,7 +436,7 @@ Page({
     } else {
       regist(uploadData).then((res) => {
         if (res.code == 1) {
-          setTimeout(this.handleLogin, 1500)
+          setTimeout(this.handleLogin, 500)
         }
       })
     }

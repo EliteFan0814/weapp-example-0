@@ -8,6 +8,10 @@ Component({
       type: String,
       value: 'btnName'
     },
+    disabled: {
+      type: Boolean,
+      value: false
+    },
     isPushing: {
       type: Boolean,
       value: false

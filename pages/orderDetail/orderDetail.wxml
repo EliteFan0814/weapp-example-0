@@ -100,9 +100,20 @@
           <text bind:tap="confirmDialog" class="confirm">确认</text>
         </view>
         <view class="select-list">
+          <!-- 手风琴 -->
           <van-collapse accordion value="{{ activeSelect }}" bind:change="nowOpen">
+          <!-- 第一步，选择产品列表 -->
+            <van-collapse-item value="{{goodsListName}}" title="产品列表" name="goodsList">
+              <view class="select-wrap">
+                <view wx:for="{{goodsList}}" wx:key="cate_id" data-index="{{index}}" bind:tap="handleSelectGoodsList" class="select-item {{item.isSelected?'active-item':''}}">
+                  {{item.name}}
+                </view>
+              </view>
+            </van-collapse-item>
             <van-collapse-item disabled="{{item.disabled}}" value="{{finallSelectedList[index].name}}" wx:for="{{selectList}}" wx:key="title" title="{{item.title}}" name="{{item.type}}">
+              <!-- 手风琴内部 -->
               <scroll-view bindscrolltolower="infinityGetProductList" data-use-infinity="{{index === 1?true:false}}" scroll-y="true" class="select-wrap">
+                <!-- 手风琴内部选项 -->
                 <view wx:for="{{item.children}}" wx:key="sort" wx:for-item="innerItem" wx:for-index="innerIndex" data-index="{{index}}" data-inner-index="{{innerIndex}}" bind:tap="handleSelectItem" class="select-item {{innerItem.isSelected?'active-item':''}}">
                   {{innerItem.name}}
                 </view>

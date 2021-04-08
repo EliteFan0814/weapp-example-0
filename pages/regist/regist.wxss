@@ -73,8 +73,75 @@
   font-size: 24rpx;
 }
 
+.container .first-form .agreement .checkbox-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .first-form .agreement .checkbox-wrap .label-style {
+  color: #b6b6b6;
+  font-size: 26rpx;
+}
+
+.container .first-form .agreement .checkbox-wrap .click-wrap {
+  font-size: 26rpx;
+  color: #b6b6b6;
+  text-decoration: underline;
+}
+
+.container .first-form .agreement .agree-root {
+  overflow: auto;
+}
+
+.container .first-form .agreement .agreement-detail {
+  position: relative;
+  bottom: 0;
+  padding: 20rpx 10rpx 20rpx;
+}
+
+.container .first-form .agreement .agreement-detail .title {
+  width: calc(100% - 20rpx);
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  text-align: center;
+}
+
+.container .first-form .agreement .agreement-detail .title > view {
+  width: 33.3%;
+  padding: 15rpx 0;
+  box-sizing: border-box;
+}
+
+.container .first-form .agreement .agreement-detail .title .close-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 30rpx;
+}
+
+.container .first-form .agreement .agreement-detail .content {
+  margin: 10rpx;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 680rpx;
+}
+
+.container .first-form .agreement .agreement-detail .btn {
+  width: 200rpx;
+  margin: 0 auto;
+  padding: 20rpx 0 0;
+}
+
+.container .first-form .agreement .agreement-detail .btn .btn-style {
+  font-size: 24rpx;
+  padding: 15rpx 0;
+}
+
 .container .first-form .first-btn {
-  margin-top: 40rpx;
+  margin-top: 15rpx;
   text-align: center;
 }
 
@@ -110,7 +177,6 @@
 }
 
 .container .second-form .skill-list .skill-item .skill-top .left-wrap image {
-  border: 1px solid red;
   margin-right: 30rpx;
   width: 40rpx;
   height: 40rpx;
@@ -174,9 +240,9 @@
 }
 
 .container .second-form .skill-btm .active-skill {
-  background-color: #3366cc;
+  background-color: #5f7af1;
   color: #fff;
-  border: 1rpx solid #3366cc;
+  border: 1rpx solid #5f7af1;
 }
 
 .container .third-form .card-wrap .card-item {

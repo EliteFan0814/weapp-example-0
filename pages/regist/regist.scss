@@ -62,9 +62,71 @@
         }
       }
     }
-
+    .agreement {
+      .checkbox-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .label-style {
+          color: #b6b6b6;
+          font-size: 26rpx;
+        }
+        .click-wrap {
+          font-size: 26rpx;
+          color: #b6b6b6;
+          text-decoration: underline;
+        }
+      }
+      .agree-root {
+        overflow: auto;
+      }
+      .agreement-detail {
+        position: relative;
+        // border: 1px solid green;
+        bottom: 0;
+        padding: 20rpx 10rpx 20rpx;
+        .title {
+          // position: absolute;
+          width: calc(100% - 20rpx);
+          display: flex;
+          align-items: center;
+          background-color: #fff;
+          text-align: center;
+          > view {
+            width: 33.3%;
+            padding: 15rpx 0;
+            box-sizing: border-box;
+          }
+          .close-icon {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 30rpx;
+          }
+          .title-inner {
+            // background-color: red;
+          }
+        }
+        .content {
+          margin: 10rpx;
+          bottom: 0;
+          overflow: hidden;
+          overflow-y: scroll;
+          height: 680rpx;
+        }
+        .btn {
+          width: 200rpx;
+          margin: 0 auto;
+          padding: 20rpx 0 0;
+          .btn-style {
+            font-size: 24rpx;
+            padding: 15rpx 0;
+          }
+        }
+      }
+    }
     .first-btn {
-      margin-top: 40rpx;
+      margin-top: 15rpx;
       text-align: center;
     }
   }
@@ -99,7 +161,6 @@
           }
           .left-wrap {
             image {
-              border: 1px solid red;
               margin-right: 30rpx;
               width: 40rpx;
               height: 40rpx;
@@ -160,9 +221,9 @@
         border-radius: 50rpx;
       }
       .active-skill {
-        background-color: #3366cc;
+        background-color: #5f7af1;
         color: #fff;
-        border: 1rpx solid #3366cc;
+        border: 1rpx solid #5f7af1;
       }
     }
   }

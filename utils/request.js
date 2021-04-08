@@ -8,7 +8,8 @@ fly.config = {
   headers: {
     'content-type': 'application/json'
   },
-  baseURL: 'https://xiaochengxu.wgywkm.com',
+  // baseURL: 'https://xiaochengxu.wgywkm.com',
+  baseURL: 'https://server.wgywkm.com',
   parseJson: true,
   timeout: 10000
 }
@@ -63,10 +64,10 @@ fly.interceptors.response.use(
         url: '/pages/404/404'
       })
     } else if (err.status >= 500 && err.status < 600) {
-      wx.showToast({
-        title: '服务器错误',
-        icon: 'none'
-      })
+      // wx.showToast({
+      //   title: '服务器错误',
+      //   icon: 'none'
+      // })
     } else {
       if (err.response.data) {
         wx.showToast({
